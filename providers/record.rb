@@ -70,7 +70,9 @@ action :create do
       create
     Chef::Log.info "Record modified: #{name}"
     else
-      Chef::Log.info "Record should have been modified but overwrite is disabled."
+      Chef::Log.info "Record #{name} should have been modified, but overwrite is set to false."
+      Chef::Log.debug "Current value: #{record.value.first}"
+      Chef::Log.debug "Desired value: #{value}"
     end
   end
 
