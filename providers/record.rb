@@ -29,7 +29,7 @@ action :create do
       else
         zone_name = new_resource.zone_id + "."
       end
-      @id ||= @zones.reject!{|z| z.domain != zone_name }.first.id
+      @id ||= @zones.find{|z| z.domain == zone_name }.id
     else
       new_resource.zone_id
     end
