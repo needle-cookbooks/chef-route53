@@ -65,10 +65,10 @@ action :create do
     create
     Chef::Log.info "Record created: #{name}"
   elsif value != record.value.first
-    if overwrite
+    unless overwrite == false
       record.destroy
       create
-    Chef::Log.info "Record modified: #{name}"
+      Chef::Log.info "Record modified: #{name}"
     else
       Chef::Log.info "Record #{name} should have been modified, but overwrite is set to false."
       Chef::Log.debug "Current value: #{record.value.first}"
