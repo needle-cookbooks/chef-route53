@@ -17,6 +17,8 @@
 # limitations under the License.
 #
 
+include_recipe "apt"
+
 node.set['build_essential']['compiletime'] = true
 include_recipe "build-essential"
 
