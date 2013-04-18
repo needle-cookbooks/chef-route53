@@ -17,6 +17,9 @@
 # limitations under the License.
 #
 
+node.set['build_essential']['compiletime'] = true
+include_recipe "build-essential"
+
 xml = package "libxml2-dev" do
   action :nothing
 end
