@@ -32,4 +32,6 @@ xslt = package "libxslt1-dev" do
 end
 xslt.run_action( :install )
 
-chef_gem "fog"
+chef_gem "fog" do
+  version '1.10.1'
+end
